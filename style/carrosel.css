@@ -1,0 +1,96 @@
+.carrossel-produtos {
+  position: relative;
+  background: #fff;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.container-produtos {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+}
+
+.container-produtos::-webkit-scrollbar {
+  display: none;
+}
+
+.produto {
+  flex: 0 0 auto;
+  text-align: center;
+  width: 180px;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.377);
+}
+
+.produto :hover{
+  cursor: pointer;
+}
+
+.produto img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+}
+
+.produto p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.seta {
+  background-color: #fff;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+  padding: 10px;
+  border-radius: 0%;
+  box-shadow: 1px 2px 6px rgba(0,0,0,0.2);
+}
+
+.seta:hover {
+  background-color: #0072ce;
+  color: #fff;
+}
+
+.seta.esquerda {
+  position: absolute;
+  left: 10px;
+}
+
+.seta.direita {
+  position: absolute;
+  right: 10px;
+}
+
+@media (max-width: 900px) {
+  .carrossel-produtos {
+    top: 25vh;
+    gap: 0;
+  }
+  .logo {
+    width: 50%;
+  }
+
+  .produto {
+    width: 140px;
+  }
+
+  .seta {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 488px){
+  .carrossel-produtos {
+  top: 30vh;
+  }
+}
