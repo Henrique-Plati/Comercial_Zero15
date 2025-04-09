@@ -1,7 +1,7 @@
 .footer {
     background-color: #2c5781;
     color: white;
-    padding: 40px 20px 20px;
+    padding: 1px;
     font-size: 14px;
     text-align: center;
   }
@@ -11,13 +11,13 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
-    gap: 30px;
+    gap: 10px;
     margin-bottom: 20px;
   }
   
   .footer h4 {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
   }
   
   .icones-pagamento i,
