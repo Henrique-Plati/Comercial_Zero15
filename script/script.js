@@ -75,3 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 4000); // troca a cada 4 segundos
   });
 });
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
