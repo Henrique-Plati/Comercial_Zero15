@@ -90,7 +90,9 @@
 }
 
 @media (max-width: 488px){
+ 
   .carrossel-produtos {
-  top: 30vh;
+    top: 3vh;
+    max-height: 10vh;
   }
 }

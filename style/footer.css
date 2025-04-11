@@ -74,4 +74,11 @@
       text-align: center;
     }
   }
+
+  @media (max-width: 488px){
+    .footer {
+    
+      max-height: 30vh;
+    }
+  }
   

@@ -303,12 +303,14 @@ nav {
 
   .banner {
     max-width: 100%;
+    max-height: 20vh;
   }
 
   .subtitulo {
     max-width: 100%;
+    min-width: 100%;
     left: 10px;
-    top: 30vh;
+    top: 20vh;
     background-color: white;
     color: #000;
   }
