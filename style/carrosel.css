@@ -1,33 +1,39 @@
 .carrossel-produtos {
-  position: relative;
   background: #fff;
-  padding: 40px 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   overflow: hidden;
+  padding: 40px 20px;
+  position: relative;
 }
 
+/* Wrapper fixo que oculta o overflow */
+.carrossel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Faixa que desliza */
 .container-produtos {
   display: flex;
   gap: 40px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 0;
+  width: max-content;
+  animation: deslizar 40s linear infinite;
 }
 
+/* Remove scrollbars (caso haja) */
 .container-produtos::-webkit-scrollbar {
   display: none;
 }
 
+/* Cada item do carrossel */
 .produto {
   flex: 0 0 auto;
-  text-align: center;
   width: 180px;
+  text-align: center;
   box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.377);
 }
 
-.produto :hover{
+.produto:hover {
   cursor: pointer;
 }
 
@@ -44,55 +50,29 @@
   color: #333;
 }
 
-.seta {
-  background-color: #fff;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 10;
-  transition: 0.3s;
-  padding: 10px;
-  border-radius: 0%;
-  box-shadow: 1px 2px 6px rgba(0,0,0,0.2);
+/* Animação contínua */
+@keyframes deslizar {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.seta:hover {
-  background-color: #0072ce;
-  color: #fff;
-}
-
-.seta.esquerda {
-  position: absolute;
-  left: 10px;
-}
-
-.seta.direita {
-  position: absolute;
-  right: 10px;
-}
-
+/* Responsividade */
 @media (max-width: 900px) {
   .carrossel-produtos {
-    top: 25vh;
     gap: 0;
-  }
-  .logo {
-    width: 50%;
   }
 
   .produto {
     width: 140px;
   }
-
-  .seta {
-    font-size: 24px;
-  }
 }
 
-@media (max-width: 488px){
- 
+@media (max-width: 488px) {
   .carrossel-produtos {
-    top: 3vh;
     max-height: 10vh;
   }
 }
