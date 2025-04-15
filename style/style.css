@@ -257,11 +257,12 @@ nav {
   }
 
   .submenu {
-    position: static;
+    position: absolute;
     display: none;
-    padding-left: 10px;
-    box-shadow: none;
-    border-radius: 0;
+    z-index: 20000;
+    left: -45px;
+    border-radius: 10px;
+    
   }
 
   .dropdown:hover .submenu {
@@ -348,7 +349,6 @@ nav {
   .submenu {
     position:absolute;
     display: none;
-    left: -26vh;
     box-shadow: none;
     border-radius: 10px;
   }
