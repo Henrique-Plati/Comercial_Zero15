@@ -62,26 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 4000); // troca a cada 4 segundos
     });
   });
-    // Toggle do menu principal
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("nav");
-  
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
-  
-    // Toggle do submenu de Produtos
-    const produtosToggle = document.getElementById("toggle-produtos");
-    const submenu = produtosToggle.nextElementSibling;
-  
-    produtosToggle.addEventListener("click", (e) => {
-      e.preventDefault(); // Impede o link de recarregar a página
-      submenu.classList.toggle("show-submenu");
-    });
-  
-    // Fecha o submenu ao clicar fora
-    document.addEventListener("click", function (e) {
-      if (!produtosToggle.contains(e.target) && !submenu.contains(e.target)) {
-        submenu.classList.remove("show-submenu");
-      }
-    });
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+  const produtosToggle = document.getElementById('toggle-produtos');
+  const submenu = produtosToggle.nextElementSibling;
+
+  // Toggle do menu principal
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  // Toggle do submenu Produtos
+  produtosToggle.addEventListener('click', (e) => {
+    e.preventDefault(); // Impede o comportamento padrão do link
+    submenu.classList.toggle('show-submenu');
+  });
+
+ 
