@@ -3,6 +3,7 @@
   overflow: hidden;
   padding: 40px 20px;
   position: relative;
+  max-height: 100%;
 }
 
 /* Wrapper fixo que oculta o overflow */
@@ -63,7 +64,9 @@
 /* Responsividade */
 @media (max-width: 900px) {
   .carrossel-produtos {
+    top: 26vh;
     gap: 0;
+    max-height: 100%;
   }
 
   .produto {
@@ -73,6 +76,6 @@
 
 @media (max-width: 488px) {
   .carrossel-produtos {
-    max-height: 10vh;
+    max-height: 100%;
   }
 }

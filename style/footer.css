@@ -73,11 +73,14 @@
       align-items: center;
       text-align: center;
     }
+    .footer{
+      margin-top: 35vh;
+    }
   }
 
   @media (max-width: 488px){
     .footer {
-    
+       
       max-height: 30vh;
     }
   }
