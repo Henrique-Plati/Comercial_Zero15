@@ -261,7 +261,7 @@ nav {
     display: none;
     z-index: 20000;
     left: -45px;
-    border-radius: 10px;
+    margin-top: 45px;
     
   }
 
