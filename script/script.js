@@ -70,7 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Toggle do menu principal
   toggle.addEventListener('click', () => {
     nav.classList.toggle('active');
+  
+    const icon = toggle.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-x');
   });
+  
 
   // Toggle do submenu Produtos
   produtosToggle.addEventListener('click', (e) => {
