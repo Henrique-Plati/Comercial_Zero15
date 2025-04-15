@@ -262,7 +262,8 @@ nav {
     z-index: 20000;
     left: -45px;
     margin-top: 45px;
-    
+    border-radius: 6px;
+    box-shadow: 0 4px 12px #163c5c;
   }
 
   .dropdown:hover .submenu {
@@ -350,7 +351,8 @@ nav {
     position:absolute;
     display: none;
     box-shadow: none;
-    border-radius: 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px #163c5c;
   }
 
   .dropdown:hover .submenu {
