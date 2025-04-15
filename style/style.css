@@ -211,8 +211,13 @@ nav {
 
 .menu-toggle {
   display: none;
-  font-size: 28px;
+  font-size: 30px;
   cursor: pointer;
+  color: #2c5781;
+  z-index: 9999;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 /* RESPONSIVO */
@@ -226,30 +231,49 @@ nav {
 
   .menu-toggle {
     display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
   }
 
-  .menu,
-  .contato {
+  nav {
     display: none;
-  }
-
-  nav.active .menu,
-  nav.active .contato {
-    display: flex;
     flex-direction: column;
     gap: 10px;
     background-color: #fff;
-    padding: 10px;
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
     border-radius: 10px;
-  
+    z-index: 999;
   }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    padding-left: 10px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .dropdown:hover .submenu {
+    display: block;
+  }
+
+  .contato {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+
 
   .banner {
     max-width: 100%;
@@ -275,27 +299,69 @@ nav {
 }
 
 
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 900px) {
 
-  
+ 
+
   body{
     max-height: 50%;
   }
 
-  nav.active .menu,
-  nav.active .contato {
-    display: flex;
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     background-color: #fff;
-    padding: 10px;
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
     border-radius: 10px;
-    
+    z-index: 999;
   }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 1vh;
+  }
+
+  .submenu {
+    position:absolute;
+    display: none;
+    left: -26vh;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+
+  .dropdown:hover .submenu {
+    display: block;
+    top: -2vh;
+  }
+
+  .contato {
+    display: none;
+  }
+
 
   .banner {
     max-width: 100%;
