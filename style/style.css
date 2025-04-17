@@ -272,6 +272,8 @@ nav {
     position: absolute;
     display: none;
     box-shadow: 0 4px 12px #163c5c;
+    left: -7vh;
+    z-index: 10;
   }
 
   .dropdown:hover .submenu {
