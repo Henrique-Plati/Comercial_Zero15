@@ -1,8 +1,7 @@
-/* Reset básico */
+/* Arquivo: style/style.css */
 * {
   margin: 0;
   padding: 0;
-  
 }
 
 body {
@@ -10,13 +9,11 @@ body {
   color: #333;
   background-color: #f8f9fa;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
   max-width: 100%;
 }
 
-/* HEADER */
+/* ==== HEADER ==== */
 header {
   z-index: 1000;
   background-color: #fff;
@@ -28,11 +25,6 @@ header {
   flex-wrap: wrap;
   position: sticky;
   top: 0;
-  
-}
-
-.main {
-  background-color: #f1f1f1;
 }
 
 .logo {
@@ -44,6 +36,7 @@ header {
 .logo img {
   width: 330px;
   height: auto;
+  max-width: 100%; /* Adicionado para melhor responsividade */
 }
 
 nav {
@@ -119,97 +112,6 @@ nav {
   width: 20px;
 }
 
-.subtitulo {
-  position: relative;
-  color: #2c5781;
-  left: 110vh;
-
-
-}
-
-.banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 20vh;
-  background-color: #f5f5f5;
-  position: relative;
-
-  gap: 2rem;
-  flex-wrap: wrap;
-  /* responsivo para dispositivos menores */
-}
-
-.subtitulo {
-  max-width: 500px;
-  color: #2c5781;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  margin: 0 auto;
-
-}
-
-.subtitulo h1 {
-  font-size: 2.5rem;
-  margin-bottom: 5px;
-}
-
-.subtitulo h2 {
-  color: #444444;
-  font-size: 1.2rem;
-}
-
-.botao-banner {
-  margin-top: 20px;
-}
-
-.btn-orcamento {
-  padding: 12px 24px;
-  background-color: #1e4f7b;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
-
-.btn-orcamento:hover {
-  background-color: #163c5c;
-}
-
-
-
-
-/* BANNER */
-.banner {
-  position: relative;
-  max-width: 50%;
-  height: 300px;
-  background-image: url("../img/home2.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-.overlay {
-  position: relative;
- 
-  text-align: center;
-  max-width: 800px;
-  padding: 0 20px;
-}
-
 .menu-toggle {
   display: none;
   font-size: 30px;
@@ -221,114 +123,132 @@ nav {
   right: 20px;
 }
 
+/* ==== BANNER COM SUBTITULO LATERAL ==== */
+.banner-container {
+  background-color: #f1f1f1;
+  display: flex; /* Habilita o Flexbox para o container */
+  align-items: center; /* Alinha verticalmente os itens ao centro */
+  justify-content: space-between; /* Distribui o espaço entre o banner e o subtítulo */
+  max-width: 100%; /* Garante que o container ocupe toda a largura */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
 
-/* RESPONSIVO */
+.banner {
+  position: relative;
+  width: 50%; /* O banner ocupará metade da largura do container */
+  height: 300px; /* Ajusta a altura automaticamente */
+  max-height: 400px; /* Defina uma altura máxima se desejar */
+  background-image: url("../img/home2.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  order: 1; /* Garante que o banner venha primeiro em layouts não invertidos */
+}
 
-@media (max-width: 488px) {
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Adicione qualquer estilo de overlay que você tinha antes aqui, se necessário */
+}
 
+.subtitulo {
+  color: #2C5781;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 45%; /* O subtítulo ocupará aproximadamente a outra metade da largura */
+  text-align: center; /* Alinha o texto à esquerda */
+  padding-right: 20vh;
+  margin: 0; /* Remove a margem automática */
+  order: 2; /* Garante que o subtítulo venha depois do banner */
+}
 
-  body{
-    max-height: 50%;
+.subtitulo h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px; /* Aumentei um pouco a margem abaixo do título */
+}
+
+.subtitulo h2 {
+  color: #444444;
+  font-size: 1.2rem;
+  margin-bottom: 15px; /* Adicionei margem abaixo do subtítulo */
+}
+
+.botao-banner {
+  margin-top: 20px;
+}
+
+/* ==== CARROSSEL DE PRODUTOS ==== */
+.carrossel-produtos {
+  background: #fff;
+  overflow: hidden;
+  padding: 40px 20px;
+  position: relative;
+  max-height: 100%;
+}
+
+.carrossel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-produtos {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: deslizar 40s linear infinite;
+}
+
+.container-produtos::-webkit-scrollbar {
+  display: none;
+}
+
+.produto {
+  flex: 0 0 auto;
+  width: 180px;
+  text-align: center;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.377);
+}
+
+.produto:hover {
+  cursor: pointer;
+}
+
+.produto img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+}
+
+.produto p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+@keyframes deslizar {
+  0% {
+    transform: translateX(0%);
   }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #fff;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    border-radius: 10px;
-    z-index: 999;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .menu {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .submenu {
-    position: absolute;
-    display: none;
-    z-index: 20000;
-    left: -45px;
-    margin-top: 45px;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px #163c5c;
-  }
-
-  .dropdown:hover .submenu {
-    display: block;
-  }
-
-  .contato {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-
-
-  .banner {
-    max-width: 100%;
-    height: 30vh;
-  }
-
-  .subtitulo h1 {
-    max-width: 100%;
-    left: 10px;
-    top: 70vh;
-    background-color: white;
-    color: #000;
-    font-size: 0px;
-  }
-
-  .btn-orcamento {
-    font-size: 14px;
-    max-width: 100%;
-  }
-  .logo img {
-    width: 35vh;
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-
-
-
-
-
-
-
-
-
-
+/* ==== RESPONSIVIDADE ==== */
 
 @media (max-width: 900px) {
-
- 
-
-  body{
-    max-height: 50%;
-  }
-
   .menu-toggle {
     display: block;
   }
 
+
   nav {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     background-color: #fff;
     position: absolute;
     top: 70px;
@@ -346,14 +266,11 @@ nav {
   .menu {
     flex-direction: column;
     gap: 10px;
-    padding: 1vh;
   }
 
   .submenu {
-    position:absolute;
+    position: absolute;
     display: none;
-    box-shadow: none;
-    border-radius: 6px;
     box-shadow: 0 4px 12px #163c5c;
   }
 
@@ -366,27 +283,71 @@ nav {
     display: none;
   }
 
+  .banner-container {
+    flex-direction: column; /* Empilha o banner e o subtítulo em telas menores */
+    align-items: center; /* Centraliza os itens */
+    background-color: white;
+  }
+
+  .banner {
+    width: 100%;
+    max-height: 300px; /* Ajuste a altura para telas menores */
+    order: 1; /* Mantém a ordem original */
+  }
+
+  .subtitulo {
+    max-width: 100%;
+    text-align: center;
+    order: 2; /* Mantém a ordem original */
+    padding: 20px;
+  }
+
+  .subtitulo h1 {
+    font-size: 2rem; /* Reduz o tamanho da fonte em telas menores */
+  }
+
+  .botao-banner {
+    margin-top: 20px;
+    text-align: center; /* Centraliza o botão em telas menores */
+  }
 
   .banner {
     max-width: 100%;
     max-height: 20vh;
   }
 
-  .subtitulo {
-    max-width: 100%;
-    min-width: 100%;
-    left: 10px;
-    top: 20vh;
-    background-color: white;
-    color: #000;
+  .carrossel-produtos {
+    gap: 0;
   }
 
-  .btn-orcamento {
-    font-size: 14px;
-    max-width: 100%;
+  .produto {
+    width: 140px;
+  }
+}
+
+@media (max-width: 488px) {
+
+  .banner-container{
+    background-color: white;
+  }
+
+  .subtitulo h1 {
+    display: none;
   }
 
   .logo img {
-    width: 35vh;
+    width: 30vh; /* Ajusta o tamanho do logo */
+  }
+
+  .btn-orcamento {
+    font-size: 12px; /* Reduz o tamanho da fonte do botão */
+  }
+
+  .produto {
+    width: 140px;
+  }
+
+  .carrossel-produtos {
+    max-height: 100%;
   }
 }

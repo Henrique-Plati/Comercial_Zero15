@@ -79,7 +79,6 @@
     align-items: center;
     text-align: center;
     gap: 20px;
-    margin-top: 30px;
   }
 
   .selo-confianca {
@@ -89,7 +88,6 @@
   .contatof {
     width: 100%;
     order: 1;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
